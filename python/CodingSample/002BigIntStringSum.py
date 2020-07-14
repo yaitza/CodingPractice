@@ -12,6 +12,12 @@ __date__ = "2020-06-11 11:00"
 
 
 def big_int_str_sum(str1, str2):
+    """
+    大数据超长数据相加
+    :param str1: 超长数字1
+    :param str2: 超长数字2
+    :return: 返回相加结果
+    """
     results = []
 
     if not str1:
