@@ -11,7 +11,7 @@ __author__ = "yaitza"
 __date__ = "2020-06-06 11:44"
 
 ' 测试数据 '
-# data_array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+data_array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 # data_array = [[1], [2], [3]]
 # data_array = []
 # data_array = [[1, 2, 3]]
