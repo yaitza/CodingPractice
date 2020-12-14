@@ -1,0 +1,5 @@
+/.idea/
+*.pyc
+/venv
+.vscode/.ropeproject/config.py
+.vscode/launch.json
