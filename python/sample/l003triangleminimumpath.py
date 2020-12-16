@@ -28,18 +28,28 @@ __date__ = "2020-07-14 15:48"
 如果你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题，那么你的算法会很加分。
 '''
 
-import pdb
 
 
-def triangle_min_path(trianleArray):
+
+def triangle_min_path(s):
     """
     :param trianleArray: 三角形数组
     :return: 返回最小路径值
     """
-    depth = trianleArray.__len__()
-    pdb.set_trace()
-    max_width = trianleArray[depth-1].__len__()
+    depth = s.__len__()
+    dp = [[1e6]*depth for _ in range(depth)]
 
+    for i in range(depth):
+        for j in range(s[i].__len__()):
+            if i == 0:
+                dp[i][j] = s[i][j]
+            else:
+                dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + s[i][j]
+    result = dp[depth-1][0]
+    for i in dp[depth-1]:
+        if i < result:
+            result = i
+    return result
 
 def get_minimum(x, array):
     if x + 1 == array.__len__():
@@ -47,9 +57,4 @@ def get_minimum(x, array):
     else:
         return array[x+1] if array[x] > array[x+1] else array[x]
 
-def test_get_minimum():
-    assert get_minimum([1, 4, 5, 6]) == 1
 
-
-def test_triangle_min_path():
-    assert triangle_min_path([[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]) == 12
