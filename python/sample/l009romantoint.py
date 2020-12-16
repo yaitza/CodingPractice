@@ -68,28 +68,28 @@ IC 和 IM 这样的例子并不符合题目要求，49 应该写作 XLIX，999 �
 '''
 
 
-def inttoroman(s):
+def inttoroman(num):
     dict = {1: 'I', 4: 'IV', 5: 'V', 9: 'IX',
             10: 'X', 40: 'XL', 50: 'L', 90: 'XC',
             100: 'C', 400: 'CD', 500: 'D', 900: 'CM',
             1000: 'M'}
 
-    if dict.keys().__contains__(s):
-        return dict[s]
+    if dict.keys().__contains__(num):
+        return dict[num]
 
     result = ""
     flag = 1
-    while s > 0:
-        num = s % 10
-        index = num * flag
+    while num > 0:
+        numEx = num % 10
+        index = numEx * flag
         if dict.keys().__contains__(index):
             result = dict[index] + result
-        elif num < 4:
-            result = dict[1*flag] * num + result
-        elif num > 5:
-            result = dict[5*flag] + dict[1*flag] * (num-5) + result
+        elif numEx < 4:
+            result = dict[1*flag] * numEx + result
+        elif numEx > 5:
+            result = dict[5*flag] + dict[1*flag] * (numEx-5) + result
 
-        s = int(s / 10)
+        num = int(num / 10)
         flag = flag * 10
 
     return result
