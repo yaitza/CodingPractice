@@ -93,7 +93,6 @@ class Solution(object):
         return dum.next
 
 
-
 if __name__ == "__main__":
     l14 = ListNode(4)
     l13 = ListNode(3)
